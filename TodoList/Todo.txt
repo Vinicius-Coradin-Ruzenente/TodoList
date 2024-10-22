@@ -1,0 +1,4 @@
+﻿// TODO
+
+- verificar o porque que está dando unique constraint failed quando eu crio uma nova task
+- ver se a formatação para enviar apenas data sem as horas está funcionando
