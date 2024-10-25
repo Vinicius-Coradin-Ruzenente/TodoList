@@ -16,7 +16,7 @@ builder.Services.AddDbContext<TodoListDbContext>(db => db.UseSqlite(builder.Conf
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 builder.Services.AddControllers().AddJsonOptions(x =>
 {
-    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
     x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
     x.JsonSerializerOptions.Converters.Add(new DateOnlyJsonConverter());
 });

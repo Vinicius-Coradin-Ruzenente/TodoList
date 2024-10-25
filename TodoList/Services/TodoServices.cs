@@ -15,7 +15,7 @@ namespace TodoList.Services
         public async Task<List<Todos>> GetTodosByUserId(int userId, DateTime? firstDate, DateTime? lastDate)
         {
             DateTime firstDateValue = firstDate ?? new DateTime(1, 1, 1); // '0001-01-01'
-            DateTime lastDateValue = lastDate ?? new DateTime(9999, 12, 31); // '9999-12-31'
+            DateTime lastDateValue = lastDate ?? new DateTime(9999, 12, 30); // '9999-12-31'
 
             return await _db.Todos.Where(todos => todos.UserId == userId && todos.CreatedAt >= firstDateValue && todos.CreatedAt <= lastDateValue.AddDays(1)).ToListAsync();
         }
